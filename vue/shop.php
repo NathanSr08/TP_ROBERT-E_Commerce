@@ -22,11 +22,12 @@
                                     <!-- Product name-->
                                     <p class="fw-bolder"><?php echo $al[$i]['Title']; ?></p>
                                     <!-- Product price-->
-                                  <?php echo $al[$i]['prix'] ?>€
+                                
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <p style="text-align:center"><?php echo $al[$i]['prix']; ?>€</p>
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a> <a href="../php/add_panier.php?idart=<?php echo $al[$i]['id'] ;?>"><button type="button" class="btn btn-success">+</button></a> </div>
                               
                             </div>

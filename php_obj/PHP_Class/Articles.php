@@ -16,6 +16,13 @@ class Articles
         $requete = "Delete from Articles where id = $id";
         $ok=$cnx->query($requete);
     }
+    function update($id,$title,$des,$idc,$picture,$prix)
+    {
+        $cnx = cnx_bdd();
+        $requete = "UPDATE Articles  SET Title = '".$title."',`Description`='".$des."',Date_ajout = '".date('d-m-y')."',id_Catégories = $idc,picture = '".$picture."',prix='".$prix."' where id = $id;";
+       
+        $ok=$cnx->query($requete);
+    }
     function liste_all()
     {
         $cnx = cnx_bdd();
@@ -70,6 +77,7 @@ class Articles
             $info[$i]['Description']=$ligne['Description'];
             $info[$i]['picture']=$ligne['picture'];
             $info[$i]['prix']=$ligne['prix'];
+           
             $ligne=$jeuResultat->fetch();
             $i = $i + 1;
         }
@@ -92,6 +100,7 @@ class Articles
             $info[$i]['Description']=$ligne['Description'];
             $info[$i]['picture']=$ligne['picture'];
             $info[$i]['prix']=$ligne['prix'];
+            $info[$i]['cat']=$ligne['id_Catégories'];
             $ligne=$jeuResultat->fetch();
             $i = $i + 1;
         }
