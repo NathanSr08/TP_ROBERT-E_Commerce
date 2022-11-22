@@ -76,6 +76,14 @@ class Panier
              */
             function obtenirPanier() 
             {
+                if(!isset($_SESSION["panier"]))
+                {
+                    $panier=False;
+                }
+                else
+                {
+
+                
             $panier=array();
             $panier["ref"]=array();
             $panier["qte"]=array();
@@ -87,6 +95,8 @@ class Panier
                 $panier["qte"][$i]=$_SESSION["qte"][$i]; 
                 $i = $i + 1;      
             }
+           
+        }   
             // echo "<br>panier : ";
             // print_r($panier);
 

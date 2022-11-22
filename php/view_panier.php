@@ -7,7 +7,24 @@ include('../vue/navbar.php');
 $p = new Panier;
 $a = new Articles;
 $panier = $pl = $p->obtenirPanier();
+if($panier==False)
+{
+    ?>
+    <div style="text-align:center"class="alert alert-secondary" role="alert">
+  Votre panier est vide !
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+<?php
+}
+else
+{
+
+
 // var_dump($panier);
 include('../vue/panier.php');
 include('../vue/footer.php');
+}
+
 ?>

@@ -5,6 +5,7 @@ $p = new Panier;
 $count = $p->comptePanier();
 $c = new Categories;
 $cl = $c->liste();
+$u = new Users;
  ?>
 <html lang="en">
     <head>
@@ -31,7 +32,12 @@ $cl = $c->liste();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../php/login.php">Login</a></li>
+                        <?php if($u->verif_session()==True) { ?>
+                        <li class="nav-item"><a class="nav-link" href="../php/logout.php">Logout</a></li>
+                        <?php } else { ?>
+                            <li class="nav-item"><a class="nav-link" href="../php/login.php">Login</a></li>
+                            <?php } ?>
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -44,6 +50,7 @@ $cl = $c->liste();
                                 
                             </ul>
                         </li>
+                        <?php if($u->verif_session()==True) { if($_SESSION['cat']=="root") {?>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Articles</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -54,6 +61,7 @@ $cl = $c->liste();
                                 <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                             </ul>
                         </li>
+                        <?php } } ?>
                     </ul>
                     
                     <form class="d-flex"> <a href="../php/view_panier.php">
