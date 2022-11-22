@@ -8,7 +8,28 @@ class Articles
         $cnx = cnx_bdd();
         $requete = "INSERT INTO Articles (Title,`Description`,Date_ajout,id_Catégories,picture,prix) VALUES ('".$title."','".$des."','".$date_aj."',$idc,'".$picture."','".$prix."');";
         $ok=$cnx->query($requete);
-        echo $requete;
+        
+    }
+    function liste_all()
+    {
+        $cnx = cnx_bdd();
+        $requete="SELECT * from Articles; ";
+        // echo $requete;
+        $jeuResultat=$cnx->query($requete);  
+        $i = 0;
+        $ligne = $jeuResultat->fetch();
+        while($ligne)
+        {
+            $info[$i]['id']=$ligne['id'];
+            $info[$i]['Title']=$ligne['Title'];
+            $info[$i]['Description']=$ligne['Description'];
+            $info[$i]['picture']=$ligne['picture'];
+            $info[$i]['prix']=$ligne['prix'];
+            $ligne=$jeuResultat->fetch();
+            $i = $i + 1;
+        }
+        $jeuResultat->closeCursor();  
+        return $info;
     }
     function liste($id)
     {

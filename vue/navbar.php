@@ -2,7 +2,9 @@
 <?php 
 
 $p = new Panier;
-$c = $p->comptePanier();
+$count = $p->comptePanier();
+$c = new Categories;
+$cl = $c->liste();
  ?>
 <html lang="en">
     <head>
@@ -18,7 +20,7 @@ $c = $p->comptePanier();
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../css/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!-- Navigation-->
@@ -29,14 +31,17 @@ $c = $p->comptePanier();
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../php/login.php">Login</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              
                                 <li><a class="dropdown-item" href="#!">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                                <?php $i = 0; while($i<count($cl)) { ?>
+                                <li><a class="dropdown-item" href="../php/shop_cat.php?id=<?php echo $cl[$i]['id']; ?>"><?php echo $cl[$i]['Title']; ?></a></li>
+                                <?php $i=$i+1; } ?>
+
+                                
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -55,7 +60,7 @@ $c = $p->comptePanier();
                     
                             <i class="bi-cart-fill me-1"></i>
                        Cart
-                      <span class="badge bg-dark text-white ms-1 rounded-pill"><?php echo $c; ?></span>
+                      <span class="badge bg-dark text-white ms-1 rounded-pill"><?php echo $count; ?></span>
                         </button></a>
                     </form>
                 </div>

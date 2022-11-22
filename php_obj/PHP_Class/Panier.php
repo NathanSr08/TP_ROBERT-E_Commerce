@@ -105,7 +105,7 @@ class Panier
             // unset($array[1]);
             // $array = array_values($array);
 
-            function retirerPanier($ref) 
+            function del($ref) 
             {
             $retirer = FALSE;
             

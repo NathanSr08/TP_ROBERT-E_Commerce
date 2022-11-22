@@ -1,10 +1,9 @@
 <?php
 include('../php_obj/autoload.php');
 $p = new Panier;
-$p->add($_GET['idart']);
-
+$p->del($_GET['id']);
 
 ?>
    <SCRIPT LANGUAGE="JavaScript">
-document.location.href="../#test"
+document.location.href="view_panier.php"
 </SCRIPT>

@@ -15,11 +15,26 @@ if(count($_POST)==0)
 }
 else
 {
+    if(isset($_POST['pre']))
+    {
+        
+        ?>
+        <SCRIPT LANGUAGE="JavaScript">
+        document.location.href="ajout_article.php?pre=ok&title=<?php echo $_POST['title'];?>&pic=<?php echo $_POST['pic'];?>&pr=<?php echo $_POST['prix']; ?>"
+        </SCRIPT>
+        <?php
+    }
+    else
+    {
+
     $date = date('d-m-y');
     $a->add( $_POST['title'],$_POST['des'],$date,$_POST['cat'],$_POST['pic'],$_POST['prix']);
+    
+    }
+    
    ?>
    <SCRIPT LANGUAGE="JavaScript">
-document.location.href="../"
+document.location.href="../#test"
 </SCRIPT>
 <?php
 

@@ -13,7 +13,7 @@
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                     <?php $i = 0; while($i<count($al)) { ?>
                     <div class="col mb-5">
-                        <div class="card h-100">
+                        <div class="card h-100" id="test">
                             <!-- Product image-->
                             <img class="card-img-top" src="<?php echo $al[$i]['picture'] ?>" alt="..." />
                             <!-- Product details-->
@@ -22,7 +22,7 @@
                                     <!-- Product name-->
                                     <p class="fw-bolder"><?php echo $al[$i]['Title']; ?></p>
                                     <!-- Product price-->
-                                  <?php echo $al[$i]['prix'] ?>
+                                  <?php echo $al[$i]['prix'] ?>€
                                 </div>
                             </div>
                             <!-- Product actions-->
