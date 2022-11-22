@@ -10,6 +10,12 @@ class Articles
         $ok=$cnx->query($requete);
         
     }
+    function del($id)
+    {
+        $cnx = cnx_bdd();
+        $requete = "Delete from Articles where id = $id";
+        $ok=$cnx->query($requete);
+    }
     function liste_all()
     {
         $cnx = cnx_bdd();
@@ -25,6 +31,24 @@ class Articles
             $info[$i]['Description']=$ligne['Description'];
             $info[$i]['picture']=$ligne['picture'];
             $info[$i]['prix']=$ligne['prix'];
+            $ligne=$jeuResultat->fetch();
+            $i = $i + 1;
+        }
+        $jeuResultat->closeCursor();  
+        return $info;
+    }
+    function liste_allv2($id)
+    {
+        $cnx = cnx_bdd();
+        $requete="SELECT c.Title from Articles a inner join Catégories c on a.id_Catégories = c.id where a.id = $id; ";
+        // echo $requete;
+        $jeuResultat=$cnx->query($requete);  
+        $i = 0;
+        $ligne = $jeuResultat->fetch();
+        while($ligne)
+        {
+            $info[$i]['Title']=$ligne['Title'];
+           
             $ligne=$jeuResultat->fetch();
             $i = $i + 1;
         }
