@@ -88,6 +88,14 @@ class Panier
             $panier["ref"]=array();
             $panier["qte"]=array();
             $nb = count($_SESSION["panier"]);
+            if($nb ==0)
+            {
+                $panier=False;
+            }
+            else
+            {
+
+            
             $i=0;
             while($i<$nb)
             {
@@ -96,7 +104,8 @@ class Panier
                 $i = $i + 1;      
             }
            
-        }   
+        }  
+    } 
             // echo "<br>panier : ";
             // print_r($panier);
 
