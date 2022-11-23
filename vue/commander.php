@@ -6,7 +6,7 @@
             </div>
         </header>
         <br>
-        <div class="container">
+        <div class="container" id="test">
 
       
         <div class="row">
@@ -20,7 +20,7 @@ while($i<count($panier['ref']))
    $total = $total + $art[0]['prix']*$panier['qte'][$i];
   
 ?><div class="card">
-    <div style="text-align:right;"><a href="../php/del_panier.php?id=<?php echo $art[0]['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+    <div style="text-align:right;"><a style="color:black"; href="../php/del_panier.php?id=<?php echo $art[0]['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
   <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
 </svg></a></div>
   <!-- <div class="card-header">
@@ -90,3 +90,25 @@ width : 100%;
 </div>
 </div>
 </div>
+<script>
+    function hid() {
+document.getElementById("test").addEventListener(
+  "click",
+  () => {
+    document.getElementById("nav").hidden = true;
+    
+  },
+  false
+);
+    }
+    
+    function show() {
+document.getElementById("test").addEventListener(
+  "click",
+  () => {
+    document.getElementById("nav").hidden = false;
+    
+  },
+  false
+);
+    }  </script>
