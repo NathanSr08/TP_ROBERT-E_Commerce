@@ -10,7 +10,19 @@
 
       
         <div class="row">
-  <div style="text-align:center" class="col-8"><br><br><div class="card">
+  <div style="text-align:center" class="col-8"><br><br><?php $i = 0;
+$total = 0;
+while($i<count($panier['ref']))
+{
+
+   
+    $art = $a->liste_one($panier['ref'][$i]);
+   $total = $total + $art[0]['prix']*$panier['qte'][$i];
+  
+?><div class="card">
+    <div style="text-align:right;"><a href="../php/del_panier.php?id=<?php echo $art[0]['id']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+  <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+</svg></a></div>
   <!-- <div class="card-header">
     Featured
   </div> -->
@@ -22,22 +34,23 @@
 max-height : 100%;
 width : 100%;
 }</style>
-<img src="https://www.tradediscount.com/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/d/e/dell-3020-sff-i5-8go-500go-hdd-w10-ecran22.jpg" alt="Bootstrap" class="img-responsive">
+<img src="<?php echo $art[0]['picture'] ?>" alt="Bootstrap" class="img-responsive">
     </div>
     <div class="col-6">
         
-<h6 style="text-align:left">Table induction DE DIETRICH DPI7535B</h6>
+<h6 style="text-align:left"><?php echo $art[0]['Title'] ?></h6>
     </div>
     <div class="col-3">
         <div style="text-align:right"><strike>699.00€</strike>&ensp;<button type="button" class="btn btn-outline-warning">-33%</button></div>
-        <h4 style="">340€</h4>
+        <h4 style=""><?php echo $art[0]['prix'] ?>€</h4>
       <div style="font-size:10px;">dont 5,00€ d’éco-part. DEEE</div> 
     </div>
+    <div><input style="width:5%;" type="number" name="qtn" value="<?php echo $panier['qte'][$i]; ?>" id=""></div>
    </div>
   </div>
-</div></div>
+</div><br><?php $i=$i+1; } ?></div>
   
-  <div class="col-4"><h7>Mon panier (4)</h7>
+  <div class="col-4"><h7>Mon panier (<?php echo $count;?>)</h7>
   <br><br>
   <div class="card" style="width: 18rem;">
   <div class="card-body">
@@ -49,7 +62,7 @@ width : 100%;
         </div>
      
         <div class="col">
-           <H5>5600.00€</H5> 
+           <H5><?php echo $total; ?>€</H5> 
         </div>
         <div>Hors frais de livraison</div>
     </div>

@@ -5,6 +5,7 @@ include('../php_obj/autoload.php'); ?>
 <?php
 include('../vue/navbar.php');
 $p = new Panier;
+$count = $p->comptePanier();
 $a = new Articles;
 $panier = $pl = $p->obtenirPanier();
 if($panier==False)
@@ -23,7 +24,7 @@ else
 
 
 // var_dump($panier);
-include('../vue/panier.php');
+include('../vue/commander.php');
 include('../vue/footer.php');
 }
 
