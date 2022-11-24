@@ -1,7 +1,7 @@
 <div class="container">
     <div class="container">
         <br><br>
-        <h3>Edit Article</h3>
+        <h3>Ajouter un Article</h3>
         <br>
         <?php if(isset($_GET['pre'])) { ?>
         <div class="row">
@@ -36,13 +36,12 @@
         </section>
   </div>
   <div class="col">
-    <?php } $nc = $c->liste_id($al[0]['cat'])[0]['Title']; ?>
+    <?php } ?>
         <form action="" method="post">
             <br>
             <label for="exampleInputEmail1">Categorie </label>
 
         <select class="form-select" aria-label="Default select example" name="cat">
-            <option value="<?php echo $al[0]['cat'] ?>"><?php echo $nc; ?></option>
   <?php $i=0; while($i<count($cl)) { ?>
   <option value="<?php echo $cl[$i]['id']; ?>"><?php echo $cl[$i]['Title']; ?></option>
   <?php $i = $i+1; } ?>
@@ -54,24 +53,24 @@
 
   <div class="form-group">
     <label for="exampleInputEmail1">Title </label>
-    <input type="texte" class="form-control" name="title"  value="<?php if(isset($_GET['pre'])) { echo $_GET['title']; } else { echo $al[0]['Title']; } ?>" required>
+    <input type="texte" class="form-control" name="title"  <?php if(isset($_GET['pre'])) {?> value="<?php echo $_GET['title']; ?>" <?php } ?> required>
   </div>
   <br>
   <div class="row">
     <div class="col">
     <label for="exampleInputEmail1">Description </label>
 
-      <input type="text" class="form-control"  name="des" value="<?php if(isset($_GET['pre'])) { echo $_GET['des']; } else { echo $al[0]['Description']; } ?>">
+      <input type="text" class="form-control"  name="des" <?php if(isset($_GET['pre'])) {?> value="<?php echo $_GET['title']; ?>" <?php } ?>>
     </div>
     <div class="col">
     <label for="exampleInputEmail1">Prix </label>
 
-      <input type="text" class="form-control"  name="prix" value="<?php if(isset($_GET['pre'])) { echo $_GET['pr']; } else { echo $al[0]['prix']; } ?>" required>
+      <input type="text" class="form-control"  name="prix" <?php if(isset($_GET['pre'])) {?> value="<?php echo $_GET['pr']; ?>" <?php } ?> required>
     </div>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Picture</label>
-    <input type="texte" class="form-control" id="exampleInputPassword1" name="pic" value="<?php if(isset($_GET['pre'])) { echo $_GET['pic']; } else { echo $al[0]['picture']; } ?>" required>
+    <input type="texte" class="form-control" id="exampleInputPassword1" name="pic" <?php if(isset($_GET['pre'])) {?> value="<?php echo $_GET['pic']; ?>" <?php } ?> required>
   </div>
   <br>
   <button type="submit" class="btn btn-primary" name="pre">Previsualiser</button>
@@ -81,6 +80,5 @@
     </div>
 </div>
 <?php } ?>
-<br><br>
 </div>
 </div>

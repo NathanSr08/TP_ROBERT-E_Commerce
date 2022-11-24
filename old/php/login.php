@@ -1,14 +1,6 @@
 <?php
 include('../php_obj/autoload.php'); 
 include('../vue/navbar.php');
-if(isset($_GET['er']) && $_GET['er']==02)
-{
-    ?>
-    <div style="text-align:center" class="alert alert-warning" role="alert">
-  Avant de finaliser votre commande vous devez vous connecter à votre compte !
-</div>
-    <?php
-}
 if(count($_POST)==0)
 {
     include('../vue/login.php');

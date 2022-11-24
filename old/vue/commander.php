@@ -86,7 +86,7 @@ width : 100%;
   
 </div>
 <br>
-<a href="../php/livraison.php"><button style="width:80%" type="button" class="btn btn-secondary">Valider mon panier</button></a> 
+<button style="width:80%" type="button" class="btn btn-secondary">Valider mon panier</button>
 </div>
 </div>
 </div>
