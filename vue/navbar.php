@@ -61,6 +61,8 @@ $u = new Users;
                                 <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../php_obj/tools/adminer.php">Adminer</a></li>
+
                         <?php } } ?>
                     </ul>
                     
