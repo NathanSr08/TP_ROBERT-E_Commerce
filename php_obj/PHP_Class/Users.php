@@ -31,7 +31,20 @@ class Users
         $ok=$cnx->query($requete);
     }
 
+function test()
+{
+    $cnx = cnx_bdd();
 
+    $res = $cnx->query("SELECT * FROM Users");
+    //Initialiser un tableau
+    $data = array();
+    //Récupérer les lignes
+    while ( $row = $res->fetch(PDO::FETCH_ASSOC)) {
+       $data[] = $row;
+    }
+    //Afficher le tableau au format JSON
+    echo json_encode($data);
+}
     function liste() //Lister les utilisateurs
     {
         $cnx = cnx_bdd();

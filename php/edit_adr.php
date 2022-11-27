@@ -9,7 +9,7 @@ if(count($_POST)==0)
 }
 else
 {
-    $ad->edit($_SESSION['id'],$_POST['Title'],$_POST['Pays'],$_POST['Ville'],$_POST['Code_postal'],$_POST['Rue'],$_POST['N°']); ?>
+    $ad->edit($_GET['id'],$_POST['Title'],$_POST['Pays'],$_POST['Ville'],$_POST['Code_postal'],$_POST['Rue'],$_POST['N°']); ?>
     <SCRIPT LANGUAGE="JavaScript">
 document.location.href="livraison.php?er=10"
 </SCRIPT>

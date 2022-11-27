@@ -11,8 +11,6 @@ if(isset($_GET['er']))
 </div> <?php
     }
 }
-$a = new Articles;
-$al = $a->liste_all();
 include('vue/shop.php'); 
 include('vue/footer.php');
 

@@ -61,11 +61,22 @@ $u = new Users;
                                 <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Users</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="../php/ajout_article.php">Ajouter</a></li>
+                                <li><a class="dropdown-item" href="../php/manage_usr.php">Manage</a></li>
+                                
+                            </ul>
+                        </li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../php_obj/tools/adminer.php">Adminer</a></li>
 
                         <?php } } ?>
                     </ul>
-                    
+                    <form class="form-inline my-2 my-lg-0">
+      <input style="position:relative; top:20px;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
+      <button style="position:relative;right:40%; bottom:18px;"class="btn btn-outline-success" type="submit">Search</button>
+    </form>
                     <form class="d-flex"> <a href="../php/view_panier.php">
                         <button class="btn btn-outline-dark" type="button">
                     

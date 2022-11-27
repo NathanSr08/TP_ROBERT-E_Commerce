@@ -6,7 +6,7 @@ class Addresse
         $cnx = cnx_bdd();
         $requete = "UPDATE  Adresse SET Title = '".$title."',Pays ='".$pays."',Ville = '".$ville."',Code_postal = $cp,Rue = '".$rue."' ,N° = $n° where id  = $idu;";
         $ok=$cnx->query($requete);
-        echo $requete;
+        // echo $requete;
     }
     function add($idu,$title,$pays,$ville,$cp,$rue,$n°)
     {

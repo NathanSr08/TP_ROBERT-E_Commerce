@@ -2,7 +2,6 @@
 include('../php_obj/autoload.php');
 $u = new Users;
 $ad = new Addresse;
-$adl = $ad->liste_user($_SESSION['id']);
 if(!$u->verif_session())
 {
     ?>
@@ -13,6 +12,8 @@ if(!$u->verif_session())
 }
 else
 {
+    $adl = $ad->liste_user($_SESSION['id']);
+
 include('../vue/navbar.php');
 if(isset($_GET['er']))
 {

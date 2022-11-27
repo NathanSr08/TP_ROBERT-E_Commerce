@@ -23,6 +23,20 @@ class Articles
        
         $ok=$cnx->query($requete);
     }
+    function liste_api()
+{
+    $cnx = cnx_bdd();
+
+    $res = $cnx->query("SELECT * FROM Articles");
+    //Initialiser un tableau
+    $data = array();
+    //Récupérer les lignes
+    while ( $row = $res->fetch(PDO::FETCH_ASSOC)) {
+       $data[] = $row;
+    }
+    //Afficher le tableau au format JSON
+    echo json_encode($data);
+}
     function liste_all()
     {
         $cnx = cnx_bdd();
@@ -43,6 +57,7 @@ class Articles
         }
         $jeuResultat->closeCursor();  
         return $info;
+        
     }
     function liste_allv2($id)
     {
