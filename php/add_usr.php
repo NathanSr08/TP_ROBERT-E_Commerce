@@ -3,6 +3,10 @@ include('../php_obj/autoload.php');
 $u = new Users;
 include('../vue/navbar.php');
 include('../vue/footer.php');
+if(isset($_POST['Mail']) && $_POST['Mail']!='')
+{
+
+
 if (isset($_POST['submit'])) {
     $nom = $_POST['Nom'];
     $prenom = $_POST['Prenom'];
@@ -32,6 +36,7 @@ if (isset($_POST['submit'])) {
       }
     // ...
   }
+}
   else
   {
     include('../vue/add_users.php');

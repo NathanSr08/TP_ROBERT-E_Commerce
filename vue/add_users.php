@@ -11,13 +11,13 @@
         <div class="col">
             <div class="form-group">
                 <label for="inputNom">Nom</label>
-                <input type="text" class="form-control" id="inputNom" placeholder="Nom" name="Nom">
+                <input type="text" class="form-control" id="inputNom" placeholder="Nom" name="Nom" required>
              </div>
         </div>
         <div class="col">
              <div class="form-group">
                   <label for="inputNom">Prenom</label>
-                  <input type="text" class="form-control" id="inputNom" placeholder="Prenom" name="Prenom">
+                  <input type="text" class="form-control" id="inputNom" placeholder="Prenom" name="Prenom" required >
              </div>
         </div>
     </div>
@@ -26,13 +26,13 @@
         <div class="col">
             <div class="form-group">
                   <label for="inputNom">Mail</label>
-                  <input type="mail" class="form-control" id="inputNom" placeholder="Mail" name="Mail">
+                  <input type="mail" class="form-control" id="inputNom" placeholder="Mail" name="Mail" required >
             </div>
         </div>
         <div class="col">
             <div class="form-group">
                   <label for="inputNom">Login</label>
-                  <input type="text" class="form-control" id="inputNom" placeholder="Login" name="Login">
+                  <input type="text" class="form-control" id="inputNom" placeholder="Login" name="Login" required>
             </div>
         </div>
     </div>
@@ -43,7 +43,7 @@
                 
                   
                   <label for="inputNom">Mot de passe :</label>
-                  <input type="password" class="form-control" id="inputNom" placeholder="Password" name="password">
+                  <input type="password" class="form-control" id="inputNom" placeholder="Password" name="password" required>
             </div>
         </div>
         <div class="col">
@@ -51,7 +51,7 @@
             <div class="form-group">
            
                   <label for="inputNom">Confirmation Mot de passe :</label>
-                  <input type="password" class="form-control" id="inputNom" placeholder="Password" name="conf">
+                  <input type="password" class="form-control" id="inputNom" placeholder="Password" name="conf" required >
                   <?php if(isset($_GET['er'])){if($_GET['er']==00){
                     ?>
                       <span style="color:red;">Les mots de passes doivent êtres identiques</span><?php
