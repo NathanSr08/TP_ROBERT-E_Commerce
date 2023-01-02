@@ -17,6 +17,7 @@ class Users
         {
             $requete = "Insert into Users (cat,Nom,Prenom,Mail,Login,Password) VALUES ('user','".$nom."','".$prenom."','".$mail."','".$login."','".$mdp."');";
             $ok=$cnx->query($requete);
+            return True;
         }
         //Si il existe alors 
         else

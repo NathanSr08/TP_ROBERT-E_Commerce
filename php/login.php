@@ -1,13 +1,25 @@
 <?php
 include('../php_obj/autoload.php'); 
 include('../vue/navbar.php');
-if(isset($_GET['er']) && $_GET['er']==02)
+if(isset($_GET['er'])) 
 {
+    if($_GET['er']==02)
+    {
+
+    
     ?>
     <div style="text-align:center" class="alert alert-warning" role="alert">
   Avant de finaliser votre commande vous devez vous connecter à votre compte !
 </div>
     <?php
+    }
+    if($_GET['er']==101)
+    {
+        ?>
+    <div style="text-align:center" class="alert alert-warning" role="alert">
+Le compte a été creer !!</div>
+    <?php
+    }
 }
 if(count($_POST)==0)
 {

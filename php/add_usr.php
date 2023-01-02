@@ -26,6 +26,13 @@ if (isset($_POST['submit'])) {
             document.location.href="add_usr.php?er=01"
             </SCRIPT> <?php
         }
+        else
+        {
+            ?>
+            <SCRIPT LANGUAGE="JavaScript">
+            document.location.href="login.php?er=0101"
+            </SCRIPT> <?php
+        }
 
       }
       else
