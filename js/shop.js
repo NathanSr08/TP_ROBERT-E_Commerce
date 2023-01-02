@@ -7,7 +7,7 @@ let dataArray;
 async function getUsers(){
 
   // const res = await fetch("https://randomuser.me/api/?nat=fr&results=50")
-  const res = await fetch("http://192.168.63.56/API/articles.php")
+  const res = await fetch("http://172.29.41.59/API/articles.php")
   // console.log(res)
   const  results   = await res.json()
   console.log(results)

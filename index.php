@@ -10,6 +10,15 @@ if(isset($_GET['er']))
   Permission denied !!
 </div> <?php
     }
+    if($_GET['er']==100)
+    {
+        ?>
+        <div style="text-align:center" class="alert alert-success" role="alert">
+  Le compte a été modifié!!
+</div>
+       <?php
+    }
+
 }
 include('vue/shop.php'); 
 include('vue/footer.php');

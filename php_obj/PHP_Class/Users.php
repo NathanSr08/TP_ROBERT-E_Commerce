@@ -2,7 +2,9 @@
 // include('bdd.php');
 class Users
 {
-    function add($nom,$mail,$mdp) //Ajouter un Utilisateurs
+
+    
+    function add($nom,$prenom,$mail,$login,$mdp) //Ajouter un Utilisateurs
     {
 
         $cnx = cnx_bdd();
@@ -13,7 +15,7 @@ class Users
         //Si il n'existe pas alors on insert le user dans la bdd
         if(!$ligne)
         {
-            $requete = "Insert into Users (nom,mail,mdp) VALUES ('".$nom."','".$mail."','".$mdp."');";
+            $requete = "Insert into Users (cat,Nom,Prenom,Mail,Login,Password) VALUES ('user','".$nom."','".$prenom."','".$mail."','".$login."','".$mdp."');";
             $ok=$cnx->query($requete);
         }
         //Si il existe alors 
@@ -21,6 +23,17 @@ class Users
         {
             return False;
         }
+     
+    }
+    function UPDATE($id,$nom,$prenom,$mail,$login,$mdp) //Ajouter un Utilisateurs
+    {
+
+        $cnx = cnx_bdd();
+            $requete = "UPDATE Users set Nom = '".$nom."',Prenom = '".$prenom."',Mail = '".$mail."',Login = '".$login."',Password = '".$mdp."' where id = $id;";
+            $ok=$cnx->query($requete);
+          
+        //Si il existe alors 
+       
      
     }
  
@@ -55,7 +68,29 @@ function test()
         while($ligne)
         {
             $info[$i]['Nom']=$ligne['Nom'];
+            $info[$i]['Nom']=$ligne['Prenom'];
             $info[$i]['Mail']=$ligne['Mail'];
+            $info[$i]['Nom']=$ligne['Login'];
+            $info[$i]['Password']=$ligne['Password'];
+            $ligne=$jeuResultat->fetch();
+            $i = $i + 1;
+        }
+        $jeuResultat->closeCursor();  
+        return $info;
+    }
+    function listeone($id) //Lister les utilisateurs
+    {
+        $cnx = cnx_bdd();
+        $requete = "select * from Users where id = $id;";
+        $jeuResultat=$cnx->query($requete);  
+        $i = 0;
+        $ligne = $jeuResultat->fetch();
+        while($ligne)
+        {
+            $info[$i]['Nom']=$ligne['Nom'];
+            $info[$i]['Prenom']=$ligne['Prenom'];
+            $info[$i]['Mail']=$ligne['Mail'];
+            $info[$i]['Login']=$ligne['Login'];
             $info[$i]['Password']=$ligne['Password'];
             $ligne=$jeuResultat->fetch();
             $i = $i + 1;
