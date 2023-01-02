@@ -55,7 +55,7 @@ function createUserList(usersList) {
     </div>
     <!-- Product actions-->
     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-        <p style="text-align:center">${user.prix}€</p>
+        <p id="prx" style="text-align:center">${user.prix}€</p>
         <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a> <a href="../php/add_panier.php?idart=${user.id}"><button type="button" class="btn btn-success">+</button></a> </div>
       
     </div>
