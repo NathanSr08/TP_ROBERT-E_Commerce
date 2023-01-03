@@ -80,6 +80,29 @@ class Articles
     function liste($id)
     {
         $cnx = cnx_bdd();
+        $requete="SELECT a.id,a.Title,a.Description,a.Date_ajout,a.prix,a.picture FROM Articles a INNER JOIN Catégories c on a.id_Catégories = c.id WHERE c.id = $id; ";
+        // echo $requete;
+        // $requete = "SELECT * from Articles where id = $id;";
+        $jeuResultat=$cnx->query($requete);  
+        $i = 0;
+        $ligne = $jeuResultat->fetch();
+        while($ligne)
+        {
+            $info[$i]['id']=$ligne['id'];
+            $info[$i]['Title']=$ligne['Title'];
+            $info[$i]['Description']=$ligne['Description'];
+            $info[$i]['picture']=$ligne['picture'];
+            $info[$i]['prix']=$ligne['prix'];
+           
+            $ligne=$jeuResultat->fetch();
+            $i = $i + 1;
+        }
+        $jeuResultat->closeCursor();  
+        return $info;
+    }
+    function liste2($id)
+    {
+        $cnx = cnx_bdd();
         // $requete="SELECT a.id,a.Title,a.Description,a.Date_ajout,a.prix,a.picture FROM Articles a INNER JOIN Catégories c on a.id_Catégories = c.id WHERE c.id = $id; ";
         // echo $requete;
         $requete = "SELECT * from Articles where id = $id;";
