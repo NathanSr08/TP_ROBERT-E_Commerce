@@ -7,7 +7,7 @@ let dataArray;
 async function getUsers(){
 
   // const res = await fetch("https://randomuser.me/api/?nat=fr&results=50")
-  const res = await fetch("http://172.29.41.59/API/articles.php")
+  const res = await fetch("http://172.29.42.77/API/articles.php")
   // console.log(res)
   const  results   = await res.json()
   console.log(results)
@@ -56,7 +56,7 @@ function createUserList(usersList) {
     <!-- Product actions-->
     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
         <p id="prx" style="text-align:center">${user.prix}€</p>
-        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a> <a href="../php/add_panier.php?idart=${user.id}"><button type="button" class="btn btn-success">+</button></a> </div>
+        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="../php/detail_prd.php?id=${user.id}">View options</a> <a href="../php/add_panier.php?idart=${user.id}"><button type="button" class="btn btn-success">+</button></a> </div>
       
     </div>
 </div>
