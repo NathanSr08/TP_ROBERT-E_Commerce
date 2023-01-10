@@ -72,6 +72,7 @@ $u = new Users;
 
                         <?php } } ?>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="../php/test.php">Info Client (Reseaux)</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="../php/cgv.php">CGV/CGU</a></li>
                     </ul>
 
                     <form class="form-inline my-2 my-lg-0">
